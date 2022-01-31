@@ -1,8 +1,10 @@
 <template>
     <main>
-        <disc-box v-for="(disco, index) in dischiList" 
-            :key="index"
-            :disco="disco"/>
+        <div class="container d-flex flex-wrap justify-content-between">
+            <disc-box v-for="(disco, index) in dischiList" 
+                :key="index"
+                :disco="disco"/>
+        </div>
     </main>
 </template>
 
@@ -26,13 +28,3 @@ export default {
     }
 </style>
 
-// "success": true,
-    "response": [
-        {
-            "poster": "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
-            "title": "New Jersey",
-            "author": "Bon Jovi",
-            "genre": "Rock",
-            "year": "1988"
-        },
-// 
