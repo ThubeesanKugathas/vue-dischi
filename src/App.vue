@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-box />
-    <main-container />
+    <main-container :dischiList="dischiList"/>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   },
   mounted() {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
-      this.dischiList = response.data;
+      this.dischiList = response.data.response;
     });
   }
 }
