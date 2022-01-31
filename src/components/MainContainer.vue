@@ -35,7 +35,7 @@ export default {
             left: 50%;
             transform: translateX(-50%);
         }
-        // LOADER -----------------------------------------------------------------
+        // LOADER STYLE DAL SITO -----------------------------------------------------------------
         .lds-ellipsis {
         display: inline-block;
         position: relative;
