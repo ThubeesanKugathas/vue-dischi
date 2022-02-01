@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-box />
-    <filter-box @filtro="filterGenre" />
+    <filter-box @filtro="filterGenre" @filtroArtist="filterArtist" />
     <loader-div v-if="!flagLoader" />
     <main-container v-else :dischiList="filteredDischi"/>
   </div>
@@ -40,6 +40,11 @@ export default {
     filterGenre(value) {
       this.filteredDischi = this.dischiList.filter((disco) => {
         return disco.genre.includes(value);
+      });
+    },
+    filterArtist(value) {
+      this.filteredDischi = this.dischiList.filter((disco) => {
+        return disco.author.includes(value);
       });
     },
   }
