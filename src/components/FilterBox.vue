@@ -2,7 +2,7 @@
     <div>
         <div class="d-flex justify-content-center">
             <span>Filtro per genere:</span>
-            <select v-model="selectedValue">
+            <select v-model="selectedValue" @change="$emit('filtro', selectedValue)">
                 <option disabled value="">Scegli un genere</option>
                 <option value="All">All</option>
                 <option value="Jazz">Jazz</option>
@@ -10,11 +10,11 @@
                 <option value="Pop">Pop</option>
                 <option value="Rock">Rock</option>
             </select>
-            <span @click="$emit('filtro', selectedValue)">Search</span>
         </div>
+        
         <div class="d-flex justify-content-center">
             <span>Filtro per artista:</span>
-            <select v-model="selectedArtist">
+            <select v-model="selectedArtist" @change="$emit('filtroArtist', selectedArtist)">
                 <option disabled value="">Scegli un genere</option>
                 <option value="All">All</option>
                 <option value="Bon Jovi">Bon Jovi</option>
@@ -28,7 +28,6 @@
                 <option value="Dave Weckl">Dave Weckl</option>
                 <option value="Michael Jacjson">Michael Jacjson</option>
             </select>
-            <span @click="$emit('filtroArtist', selectedArtist)">Search</span>
         </div>
     </div>
 </template>
