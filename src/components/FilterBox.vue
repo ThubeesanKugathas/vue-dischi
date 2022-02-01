@@ -1,7 +1,8 @@
 <template>
     <div>
+        <!-- FILTER PER GENERE -->
         <div class="d-flex justify-content-center">
-            <span>Filtro per genere:</span>
+            <span>Filtra per genere:</span>
             <select v-model="selectedValue" @change="$emit('filtro', selectedValue)">
                 <option disabled value="">Scegli un genere</option>
                 <option value="All">All</option>
@@ -11,9 +12,10 @@
                 <option value="Rock">Rock</option>
             </select>
         </div>
-        
+
+        <!-- FILTRO PER ARTISTA -->
         <div class="d-flex justify-content-center">
-            <span>Filtro per artista:</span>
+            <span>Filtra per artista:</span>
             <select v-model="selectedArtist" @change="$emit('filtroArtist', selectedArtist)">
                 <option disabled value="">Scegli un genere</option>
                 <option value="All">All</option>
