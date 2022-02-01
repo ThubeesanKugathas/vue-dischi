@@ -38,14 +38,22 @@ export default {
   },
   methods: {
     filterGenre(value) {
-      this.filteredDischi = this.dischiList.filter((disco) => {
-        return disco.genre.includes(value);
-      });
+      if (value === 'All') {
+        this.filteredDischi = this.dischiList;
+      } else {
+        this.filteredDischi = this.dischiList.filter((disco) => {
+          return disco.genre.includes(value); 
+        });
+      }
     },
     filterArtist(value) {
-      this.filteredDischi = this.dischiList.filter((disco) => {
-        return disco.author.includes(value);
-      });
+      if (value === 'All') {
+        this.filteredDischi = this.dischiList;
+      } else {
+        this.filteredDischi = this.dischiList.filter((disco) => {
+          return disco.author.includes(value);
+        });
+      }
     },
   }
 }

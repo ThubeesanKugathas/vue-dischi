@@ -25,7 +25,7 @@ export default {
         padding: 20px;
         width: calc((100% - 100px) / 5);
         text-align: center;
-        margin: 10px 0;
+        margin: 10px;
 
         img {
             width: 100%;

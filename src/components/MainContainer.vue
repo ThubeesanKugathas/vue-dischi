@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="container d-flex flex-wrap justify-content-between">
+        <div class="container d-flex flex-wrap justify-content-start">
             <disc-box v-for="(disco, index) in dischiList" 
                 :key="index"
                 :disco="disco"/>
@@ -25,5 +25,9 @@ export default {
     main {
         background-color: #1e2d3b;
         padding: 100px 0;
+
+        div {
+            margin: 0 auto;
+        }
     }
 </style>
