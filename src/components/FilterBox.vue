@@ -55,8 +55,12 @@ export default {
       filterReset() {
           if (this.selectedType === 'genre') {
               this.$emit('filtro', 'All');
+
+              this.selectedValue = '';
           } else {
               this.$emit('filtroArtist', 'All');
+
+              this.selectedArtist = '';
           }
       }
     }
