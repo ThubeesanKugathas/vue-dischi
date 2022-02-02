@@ -1,6 +1,9 @@
 <template>
     <main>
-        <input type="text" v-model="searchInput">
+        <div class="ms_search d-flex justify-content-center">
+            <span>Cerca:</span>
+            <input type="text" v-model="searchInput" placeholder="Cerca">
+        </div>
         <div class="container d-flex flex-wrap justify-content-start">
             <disc-box v-for="(disco, index) in dischiList" 
                 :key="index"
@@ -31,7 +34,17 @@ export default {
 <style lang="scss" scoped>
     main {
         background-color: #1e2d3b;
-        padding: 100px 0;
+        padding: 50px 0 100px;
+
+        .ms_search {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 30px;
+
+            span {
+                margin-right: 20px;
+            }
+        }
 
         div {
             margin: 0 auto;
