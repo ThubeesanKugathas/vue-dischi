@@ -1,5 +1,13 @@
 <template>
     <div>
+        <div class="d-flex justify-content-center">
+            <span>Filtra per:</span>
+            <select v-model="selectedType" @change="$emit('filtroType', selectedType)" >
+                <option disabled value="">Tipo</option>
+                <option value="author">Autore</option>
+                <option value="genre">Genere</option>
+            </select>
+        </div>
         <!-- FILTER PER GENERE -->
         <div class="d-flex justify-content-center">
             <span>Filtra per genere:</span>
@@ -39,7 +47,8 @@ export default {
     data() {
         return {
             selectedValue: '',
-            selectedArtist: ''
+            selectedArtist: '',
+            selectedType: '',
         }
     }
 }
