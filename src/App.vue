@@ -39,26 +39,16 @@ export default {
   methods: {
     // FILTRO PER GENERE -----------------------
     filterGenre(value) {
-      // If per impostare il valore All come l'intero array
-      if (value === 'All') {
-        this.filteredDischi = this.dischiList;
-      } else {
-        // metodo simile al live-coding 
-        this.filteredDischi = this.dischiList.filter((disco) => {
-          return disco.genre.includes(value); 
-        });
-      }
+      // metodo simile al live-coding 
+      this.filteredDischi = this.dischiList.filter((disco) => {
+        return disco.genre === value || value === 'All';
+      });
     },
     // FILTRO PER ARTISTA
     filterArtist(value) {
-      // If per impostare il valore All come l'intero array
-      if (value === 'All') {
-        this.filteredDischi = this.dischiList;
-      } else {
-        this.filteredDischi = this.dischiList.filter((disco) => {
-          return disco.author.includes(value);
-        });
-      }
+      this.filteredDischi = this.dischiList.filter((disco) => {
+        return disco.author === value || value === 'All';
+      });
     },
   }
 }
