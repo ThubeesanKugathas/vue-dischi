@@ -2,14 +2,14 @@
     <div>
         <div class="d-flex justify-content-center">
             <span>Filtra per:</span>
-            <select v-model="selectedType" @change="$emit('filtroType', selectedType)" >
+            <select v-model="selectedType">
                 <option disabled value="">Tipo</option>
                 <option value="author">Autore</option>
                 <option value="genre">Genere</option>
             </select>
         </div>
         <!-- FILTER PER GENERE -->
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" v-if="this.selectedType === 'genre'">
             <span>Filtra per genere:</span>
             <select v-model="selectedValue" @change="$emit('filtro', selectedValue)">
                 <option disabled value="">Scegli un genere</option>
@@ -22,7 +22,7 @@
         </div>
 
         <!-- FILTRO PER ARTISTA -->
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" v-if="this.selectedType === 'author'">
             <span>Filtra per artista:</span>
             <select v-model="selectedArtist" @change="$emit('filtroArtist', selectedArtist)">
                 <option disabled value="">Scegli un genere</option>
@@ -50,6 +50,9 @@ export default {
             selectedArtist: '',
             selectedType: '',
         }
+    },
+    methods: {
+      
     }
 }
 </script>

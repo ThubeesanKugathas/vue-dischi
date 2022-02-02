@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-box />
-    <filter-box @filtro="filterGenre" @filtroArtist="filterArtist" @filtroType="filterType"/>
+    <filter-box @filtro="filterGenre" @filtroArtist="filterArtist"/>
     <loader-div v-if="!flagLoader" />
     <main-container v-else :dischiList="filteredDischi"/>
   </div>
@@ -50,13 +50,15 @@ export default {
         return disco.author === value || value === 'All';
       });
     },
-    filterType(type) {
-      this.filteredDischi.forEach((disco) => {
-        if (type === Object.keys(disco)) {
-          alert('fatto');
-        }
-      });
-    }
+    // filterType(value) {
+    //   this.dischiList.forEach((disco) => {
+    //     Object.keys(disco).forEach((tipologia) => {
+    //       if(value === tipologia) {
+    //         console.log(tipologia);
+    //       }
+    //     })
+    //   });
+    // }
   }
 }
 </script>
