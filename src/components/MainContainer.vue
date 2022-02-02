@@ -1,9 +1,11 @@
 <template>
     <main>
+        <input type="text" v-model="searchInput">
         <div class="container d-flex flex-wrap justify-content-start">
             <disc-box v-for="(disco, index) in dischiList" 
                 :key="index"
-                :disco="disco"/>
+                :disco="disco"
+                :search="searchInput"/>
         </div>
     </main>
 </template>
@@ -12,6 +14,11 @@
 import DiscBox from '../components/DiscBox.vue'
 
 export default {
+    data() {
+        return {
+            searchInput: '',
+        }
+    },
     components: {
         DiscBox,
     },

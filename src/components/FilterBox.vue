@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="d-flex justify-content-center">
         <div class="d-flex justify-content-center">
             <span>Filtra per:</span>
             <select v-model="selectedType" @change="filterReset">

@@ -1,5 +1,8 @@
 <template>
-    <div class="ms_card-container">
+    <div class="ms_card-container" 
+        v-if="disco.title.toLowerCase().includes(search) || 
+        disco.author.toLowerCase().includes(search) ||
+        disco.year.includes(search)">
         <img :src="disco.poster" :alt="disco.title">
         <h1>
             {{disco.title.toUpperCase()}}
@@ -15,6 +18,7 @@
 export default {
     props: {
         disco: Object,
+        search: String,
     }
 }
 </script>
